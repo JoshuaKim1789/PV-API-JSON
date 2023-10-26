@@ -65,6 +65,14 @@
          7.4
       ]
    },
-   "soilingRatio":0.12,
-   "rainFall":11.5
+   "soilingRatio":[
+      0.12,
+      0.15
+   ],
+   "rainFall":11.5,
+   "pushPullForce":[
+      0.1,
+      -0.2,
+      0.3
+   ]
 }
