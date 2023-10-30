@@ -28,7 +28,7 @@
          "powerFactor":99.9,
          "frequency":60.0,
          "cumOutput":20000,
-         "status":0
+         "state":0
       },
       {
          "inverterId":2,
@@ -46,7 +46,7 @@
          "powerFactor":99.9,
          "frequency":60.0,
          "cumOutput":20000,
-         "status":0
+         "state":0
       }
    ],
    "PVtemperature":[
