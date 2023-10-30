@@ -45,3 +45,64 @@ The JSON object 'string' is an array that can contain one to 30 objects. Each ob
 - **power**: The 'power' attribute signifies the power of the PV string, calculated as the product of voltage and current in watts (W) and represented as a decimal integer, e.g., `43W`.
 
 This JSON object structure allows you to store information about PV strings, including their unique identifiers, voltage (in volts), current (in amperes), and calculated power (in watts).
+
+---
+
+<pre><code>
+   "inverter":[
+      {
+         "inverterId":1,
+         "voltage":[
+            220.0
+         ],
+         "current":[
+            3.1
+         ],
+         "power":660,
+         "powerFactor":100,
+         "frequency":59.9,
+         "cumOutput":2000,
+         "state":0
+      },
+      {
+         "inverterId":2,
+         "voltage":[
+            220.0,
+            220.1,
+            220.1
+         ],
+         "current":[
+            3.0,
+            3.1,
+            3.0
+         ],
+         "power":660,
+         "powerFactor":99,
+         "frequency":60.0,
+         "cumOutput":2200,
+         "state":0
+      }
+   ],
+</code></pre>
+
+The JSON object 'inverter' is an array that can contain one to 30 objects. Each object within the 'inverter' array possesses the following attributes:
+
+- **inverterId**: This attribute serves as a unique identifier for a PV inverter and is represented as a decimal integer ranging from 1 to 30, e.g., `12`. It's important to note that 'inverterId' values are sequential, starting from 1.
+
+- **voltage**: The 'voltage' attribute represents the voltage(s) of the PV inverter in volts (V). In the array, it can comprise one or three elements for single-phase or three-phase systems, respectively. Each element is a decimal number with one fraction, such as `220.3V`.
+
+- **current**: The 'current' attribute indicates the current of the PV inverter, presented as an array with one or three elements for single-phase or three-phase systems, respectively, measured in amperes (A). Each element is a decimal number with one fraction, for instance, `2.1A`.
+
+- **power**: The 'power' attribute signifies the power of the PV inverter, calculated as the product of voltage and current, and is measured in watts (W). It is represented as a decimal integer, e.g., `600W`.
+
+- **powerFactor**: The 'powerFactor' attribute represents the power factor of the PV inverter in percent (%), and it is represented as a decimal integer, e.g., `99%`.
+
+- **frequency**: The 'frequency' attribute denotes the frequency of the PV inverter in hertz (Hz) and is a decimal number with one fraction, e.g., `59.9Hz`.
+
+- **cumOutput**: The 'cumOutput' attribute describes the accumulated power over time of the PV inverter in kilowatt-hours (kWh). It is represented as a decimal integer, e.g., `2200kWh`.
+
+- **state**: The 'state' attribute deciphers the state of the PV inverter using a 16-bit code.
+
+This JSON object structure allows you to store detailed information about PV inverters, including their unique identifiers, voltage (in volts), current (in amperes), calculated power (in watts), power factor (in %), frequency (in Hz), cumulative output (in kWh), and state.
+
+---
