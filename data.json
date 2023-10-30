@@ -49,6 +49,18 @@
          "state":0
       }
    ],
+   "battery":{
+      "SOC":90,
+      "SOH":100,
+      "voltage":24.1,
+      "current":5.4,
+      "temperature":[
+         25.4,
+         33.6,
+         55.3
+      ],
+      "state":0
+   },
    "PVtemperature":[
       50.5,
       51.2
