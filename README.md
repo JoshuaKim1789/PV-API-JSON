@@ -38,10 +38,10 @@ The JSON object 'string' is an array that can contain one to 30 objects. Each ob
 
 - **stringId**: This attribute serves as a unique identifier for a PV string and is represented as a decimal integer ranging from 1 to 30. For example, `12`. It's important to note that 'stringId' values are sequential, starting from 1.
 
-- **voltage**: The 'voltage' attribute represents the voltage of the PV string. It's a decimal number with one fraction, such as `20.3`.
+- **voltage**: The 'voltage' attribute represents the voltage of the PV string in volts (V). It's a decimal number with one fraction, such as `20.3V`.
 
-- **current**: 'current' indicates the current of the PV string, presented as a decimal number with one fraction, for instance, `2.1`.
+- **current**: 'current' indicates the current of the PV string in amperes (A). It's presented as a decimal number with one fraction, for instance, `2.1A`.
 
-- **power**: The 'power' attribute signifies the power of the PV string, calculated as the product of voltage and current. It's represented as a decimal integer, e.g., `43`.
+- **power**: The 'power' attribute signifies the power of the PV string, calculated as the product of voltage and current in watts (W) and represented as a decimal integer, e.g., `43W`.
 
-This JSON object structure allows you to store information about PV strings, including their unique identifiers, voltage, current, and calculated power.
+This JSON object structure allows you to store information about PV strings, including their unique identifiers, voltage (in volts), current (in amperes), and calculated power (in watts).
