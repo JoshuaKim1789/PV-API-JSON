@@ -27,7 +27,7 @@
          "power":660,
          "powerFactor":100,
          "frequency":59.9,
-         "cumOutput":2000,
+         "cumulativeOutput":2000,
          "state":0
       },
       {
@@ -45,7 +45,7 @@
          "power":660,
          "powerFactor":99,
          "frequency":60.0,
-         "cumOutput":2200,
+         "cumulativeOutput":2200,
          "state":0
       }
    ],
