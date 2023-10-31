@@ -13,7 +13,6 @@
 - [wind](#wind)
 - [irradiance](#irradiance)
 - [soilingRatio](#soilingRatio)
-- [rainFall](#rainFall)
 - [pushPullForce](#pushPullForce)
 
 ---
@@ -23,7 +22,7 @@
 "siteId":"0001",
 ```
 
-The variable `siteId` serves as the unique identifier for a PV (photovoltaic) plant. It is of the string data type, and its value can be any string, such as "anywhere." However, for the sake of clarity and consistency, we recommend using a numeric string in the format of '0001' to '9999' to represent site identifiers.
+The variable `siteId` serves as the unique identifier for a PV (photovoltaic) plant. It is of the string data type, and its value can be any string, such as "anywhere." However, for the sake of clarity and consistency, we recommend using a numeric string in the format of `0001` to `9999` to represent site identifiers.
 
 ---
 
@@ -32,7 +31,7 @@ The variable `siteId` serves as the unique identifier for a PV (photovoltaic) pl
 "timestamp":"2023-10-23T15:30:00",
 ```
 
-The `timestamp` value is provided in the ISO 8601 format, which is widely recognized and standardized for date and time representation. The format "YYYY-MM-DDTHH:MM:SS" provides a clear and unambiguous way to represent date and time information. In this example, the timestamp represents October 23, 2023, at 15:30:00 (3:30 PM).
+The `timestamp` value is provided in the ISO 8601 format, which is widely recognized and standardized for date and time representation. The format `YYYY-MM-DDTHH:MM:SS` provides a clear and unambiguous way to represent date and time information. In this example, the timestamp represents October 23, 2023, at 15:30:00 (3:30 PM).
 
 ---
 
@@ -141,17 +140,17 @@ This JSON object structure allows you to store detailed information about PV inv
    },
 </code></pre>
 
-The 'battery' JSON object provides information about battery storage:
+The `battery` JSON object provides information about battery storage:
 
-- **SOC (State of Charge)**: SOC represents the battery's state of charge in percent (%), and it is presented as a decimal integer, e.g., `90%`.
+- **SOC (State of Charge)**: `SOC` represents the battery's state of charge in percent (%), and it is presented as a decimal integer, e.g., `90%`.
 
-- **SOH (State of Health)**: SOH represents the battery's state of health in percent (%), and it is represented as a decimal integer, e.g., `100%`.
+- **SOH (State of Health)**: `SOH` represents the battery's state of health in percent (%), and it is represented as a decimal integer, e.g., `100%`.
 
-- **Voltage**: The 'voltage' attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
+- **Voltage**: The `voltage` attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
 
-- **Current**: The 'current' attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
+- **Current**: The `current` attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
 
-- **Temperature**: The 'temperature' attribute provides details on the battery's temperature. It includes sub-objects for 'min,' 'mean,' and 'max,' which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the 'mean' value should be considered, with others as null.
+- **Temperature**: The `temperature` attribute provides details on the battery's temperature. It includes sub-objects for `min`, `mean`, and `max`, which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the `mean` value should be considered, with others as null.
 
 - **State**: The 'state' attribute deciphers the state of the battery using a 16-bit code.
 
@@ -166,7 +165,7 @@ This JSON object structure allows you to gather comprehensive information about 
    ],
 </code></pre>
 
-The 'PVtemperature' JSON object is an array that can contain one to 30 elements. Each element in the array represents the temperature of a PV (photovoltaic) module in degrees Celsius (°C) and is expressed as a decimal number with one fraction. For example, `50.5°C`.
+The `PVtemperature` JSON object is an array that can contain one to 30 elements. Each element in the array represents the temperature of a PV (photovoltaic) module in degrees Celsius (°C) and is expressed as a decimal number with one fraction. For example, `50.5°C`.
 
 If a single PV temperature sensor is in use, the array contains one element representing the current temperature reading.
 
@@ -176,7 +175,7 @@ If a single PV temperature sensor is in use, the array contains one element repr
 <pre><code>"ambientTemperature":25.3,
 </code></pre>
 
-The 'ambientTemperature' JSON object represents the ambient temperature in degrees Celsius (°C) and is expressed as a decimal number with one fraction, e.g., `25.3°C`.
+The `ambientTemperature` JSON object represents the ambient temperature in degrees Celsius (°C) and is expressed as a decimal number with one fraction, e.g., `25.3°C`.
 
 ---
 
@@ -187,11 +186,11 @@ The 'ambientTemperature' JSON object represents the ambient temperature in degre
    },
 </code></pre>
 
-The 'wind' JSON object comprises two key attributes:
+The `wind` JSON object comprises two key attributes:
 
-- **speed**: The 'speed' attribute quantifies wind speed in meters per second (m/s) with one decimal fraction, represented as "4.5 m/s."
+- **speed**: The `speed` attribute quantifies wind speed in meters per second (m/s) with one decimal fraction, represented as `4.5 m/s`.
 
-- **direction**: The 'direction' attribute specifies the wind direction, expressed as a decimal integer in degrees relative to true north (°). For instance, 0° corresponds to the north, 90° to the east, 180° to the south, and 270° to the west.
+- **direction**: The `direction` attribute specifies the wind direction, expressed as a decimal integer in degrees relative to true north (°). For instance, `0°` corresponds to the north, `90°` to the east, `180°` to the south, and `270°` to the west.
 
 ---
 
@@ -205,13 +204,13 @@ The 'wind' JSON object comprises two key attributes:
 },
 </code></pre>
 
-The 'irradiance' JSON object encompasses two key attributes:
+The `irradiance` JSON object encompasses two key attributes:
 
-- **GHI (Global Horizontal Irradiance)**: This attribute represents the Global Horizontal Irradiance and is denoted by 'GHI.' It's expressed as a decimal integer in watts per square meter, for example, "455W/m²."
+- **GHI (Global Horizontal Irradiance)**: This attribute represents the Global Horizontal Irradiance and is denoted by `GHI`. It's expressed as a decimal integer in watts per square meter, for example, `455W/m²`.
 
-- **POA (Plane of Array)**: The 'POA' attribute stands for 'Plane of Array' irradiance and is represented as an array. It can contain one or up to 10 elements, depending on the PV plant size. Each element in the 'POA' array is a decimal integer in watts per square meter, similar to 'GHI.' For instance, "830W/m²."
+- **POA (Plane of Array)**: The `POA` attribute stands for 'Plane of Array' irradiance and is represented as an array. It can contain one or up to 10 elements, depending on the PV plant size. Each element in the `POA` array is a decimal integer in watts per square meter, similar to `GHI`. For instance, `830W/m²`.
 
-The 'irradiance' object allows you to gather information about both Global Horizontal Irradiance (GHI) and Plane of Array (POA) irradiance, crucial for photovoltaic systems' performance assessment.
+The 'irradiance' object allows you to gather information about both Global Horizontal Irradiance (`GHI`) and Plane of Array (`POA`) irradiance, crucial for photovoltaic systems' performance assessment.
 
 ---
 
@@ -222,9 +221,9 @@ The 'irradiance' object allows you to gather information about both Global Horiz
    ],
 </code></pre>
 
-The 'soilingRatio' JSON object provides insights into the soiling ratio of PV panels. It can encompass zero to ten values, depending on the number of installed soiling sensors and the size of the PV plant.
+The `soilingRatio` JSON object provides insights into the soiling ratio of PV panels. It can encompass zero to ten values, depending on the number of installed soiling sensors and the size of the PV plant.
 
-Each element within the 'soilingRatio' array is represented as a decimal integer in percentage, such as "12%." A reading of 0% indicates the absence of soiling or perfect cleanliness, while 100% represents complete soiling or a significant reduction in energy output.
+Each element within the `soilingRatio` array is represented as a decimal integer in percentage, such as `12%`. A reading of `0%` indicates the absence of soiling or perfect cleanliness, while `100%` represents complete soiling or a significant reduction in energy output.
 
 This object enables monitoring and understanding the soiling conditions affecting the performance of PV panels within the plant.
 
@@ -238,14 +237,18 @@ This object enables monitoring and understanding the soiling conditions affectin
    ]
 </code></pre>
 
-The 'pushPullForce' JSON object is used to measure forces at PV structure joint points, providing insights into the structure's health. Each value in the array is represented as a decimal number with one fraction in kilograms, for example, '0.3kg.' 
+The `pushPullForce` JSON object is used to measure forces at PV structure joint points, providing insights into the structure's health. Each value in the array is represented as a decimal number with one fraction in kilograms, for example, `0.3kg`. 
 
 In this context:
 - A positive value indicates a push force.
 - A negative value indicates a pull force.
 
-The 'pushPullForce' array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is present, the array remains null. If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
+The `pushPullForce` array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is present, the array remains null. If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
 
 This object is valuable for monitoring and identifying problems in the PV structure based on force measurements.
 
 ---
+
+Last Updated: October 31, 2023
+
+--
