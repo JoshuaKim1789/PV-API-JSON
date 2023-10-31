@@ -52,7 +52,7 @@
    "battery":{
       "SOC":90,
       "SOH":100,
-      "voltage":24.1,
+      "voltage":48.3,
       "current":5.4,
       "temperature":{
          "min":25.4,
@@ -71,10 +71,10 @@
       "direction":180
    },
    "irradiance":{
-      "GHI":10.3,
+      "GHI":455,
       "POA":[
-         8.3,
-         7.4
+         830,
+         741
       ]
    },
    "soilingRatio":[
