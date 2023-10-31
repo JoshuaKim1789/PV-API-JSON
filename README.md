@@ -168,6 +168,10 @@ This JSON object structure allows you to gather comprehensive information about 
    ],
 </code></pre>
 
+The 'PVtemperature' JSON object is an array that can contain one to 30 elements. Each element in the array represents the temperature of a PV (photovoltaic) module in degrees Celsius (°C) and is expressed as a decimal number with one fraction. For example, `50.5°C`.
+
+If a single PV temperature sensor is in use, the array contains one element representing the current temperature reading.
+
 ---
 
 ### ambientTemperature
