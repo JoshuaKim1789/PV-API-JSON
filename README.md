@@ -238,4 +238,14 @@ This object enables monitoring and understanding the soiling conditions affectin
    ]
 </code></pre>
 
+The 'pushPullForce' JSON object is used to measure forces at PV structure joint points, providing insights into the structure's health. Each value in the array is represented as a decimal number with one fraction in kilograms, for example, '0.3kg.' 
+
+In this context:
+- A positive value indicates a push force.
+- A negative value indicates a pull force.
+
+The 'pushPullForce' array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is present, the array remains null. If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
+
+This object is valuable for monitoring and identifying problems in the PV structure based on force measurements.
+
 ---
