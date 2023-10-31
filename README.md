@@ -217,10 +217,16 @@ The 'irradiance' object allows you to gather information about both Global Horiz
 
 ### soilingRatio 
 <pre><code>"soilingRatio":[
-      0.12,
-      0.15
+      12,
+      15
    ],
 </code></pre>
+
+The 'soilingRatio' JSON object provides insights into the soiling ratio of PV panels. It can encompass zero to ten values, depending on the number of installed soiling sensors and the size of the PV plant.
+
+Each element within the 'soilingRatio' array is represented as a decimal integer in percentage, such as "12%." A reading of 0% indicates the absence of soiling or perfect cleanliness, while 100% represents complete soiling or a significant reduction in energy output.
+
+This object enables monitoring and understanding the soiling conditions affecting the performance of PV panels within the plant.
 
 ---
 
