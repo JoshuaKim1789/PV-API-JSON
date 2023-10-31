@@ -230,12 +230,6 @@ This object enables monitoring and understanding the soiling conditions affectin
 
 ---
 
-### rainFall
-<pre><code>"rainFall":11.5,
-</code></pre>
-
----
-
 ### pushPullForce
 <pre><code>"pushPullForce":[
       0.1,
