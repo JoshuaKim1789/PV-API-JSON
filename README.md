@@ -191,6 +191,13 @@ The 'ambientTemperature' JSON object represents the ambient temperature in degre
    },
 </code></pre>
 
+The 'wind' JSON object comprises two key attributes:
+
+- **speed**: The 'speed' attribute quantifies wind speed in meters per second (m/s) with one decimal fraction, represented as "4.5 m/s."
+
+- **direction**: The 'direction' attribute specifies the wind direction, expressed as a decimal integer in degrees relative to true north (°). For instance, 0° corresponds to the north, 90° to the east, 180° to the south, and 270° to the west.
+
+
 ---
 
 ### irradiance
