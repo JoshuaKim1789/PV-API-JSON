@@ -54,11 +54,11 @@
       "SOH":100,
       "voltage":24.1,
       "current":5.4,
-      "temperature":[
-         25.4,
-         33.6,
-         55.3
-      ],
+      "temperature":{
+         "min":25.4,
+         "mean":33.6,
+         "max":55.3
+      },
       "state":0
    },
    "PVtemperature":[
