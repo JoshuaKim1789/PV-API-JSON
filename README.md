@@ -179,6 +179,8 @@ If a single PV temperature sensor is in use, the array contains one element repr
    "ambientTemperature":25.3,
 </code></pre>
 
+The 'ambientTemperature' JSON object represents the ambient temperature in degrees Celsius (°C) and is expressed as a decimal number with one fraction, e.g., `25.3°C`.
+
 ---
 
 ### wind
