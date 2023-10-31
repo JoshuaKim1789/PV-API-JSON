@@ -16,6 +16,8 @@
 - [rainFall](#rainFall)
 - [pushPullForce](#pushPullForce)
 
+---
+
 ### siteId
 ```
 "siteId":"0001",
@@ -35,8 +37,7 @@ The `timestamp` value is provided in the ISO 8601 format, which is widely recogn
 ---
 
 ### string
-<pre><code>
-"string": [
+<pre><code>"string": [
       {
          "stringId": 1,
          "voltage": 20.1,
@@ -67,8 +68,7 @@ This JSON object structure allows you to store information about PV strings, inc
 ---
 
 ### inverter
-<pre><code>
-   "inverter":[
+<pre><code>"inverter":[
       {
          "inverterId":1,
          "voltage":[
@@ -127,8 +127,7 @@ This JSON object structure allows you to store detailed information about PV inv
 ---
 
 ### battery
-<pre><code>
-   "battery":{
+<pre><code>"battery":{
       "SOC":90,
       "SOH":100,
       "voltage":24.1,
@@ -161,8 +160,7 @@ This JSON object structure allows you to gather comprehensive information about 
 ---
 
 ### PVtemperature
-<pre><code>
-   "PVtemperature":[
+<pre><code>"PVtemperature":[
       50.5,
       51.2
    ],
@@ -175,8 +173,7 @@ If a single PV temperature sensor is in use, the array contains one element repr
 ---
 
 ### ambientTemperature
-<pre><code>
-   "ambientTemperature":25.3,
+<pre><code>"ambientTemperature":25.3,
 </code></pre>
 
 The 'ambientTemperature' JSON object represents the ambient temperature in degrees Celsius (°C) and is expressed as a decimal number with one fraction, e.g., `25.3°C`.
@@ -184,8 +181,7 @@ The 'ambientTemperature' JSON object represents the ambient temperature in degre
 ---
 
 ### wind
-<pre><code>
-   "wind":{
+<pre><code>"wind":{
       "speed":4.5,
       "direction":180
    },
@@ -197,25 +193,30 @@ The 'wind' JSON object comprises two key attributes:
 
 - **direction**: The 'direction' attribute specifies the wind direction, expressed as a decimal integer in degrees relative to true north (°). For instance, 0° corresponds to the north, 90° to the east, 180° to the south, and 270° to the west.
 
-
 ---
 
 ### irradiance
-<pre><code>
-   "irradiance":{
-      "GHI":10.3,
+<pre><code>"irradiance":{
+      "GHI":455,
       "POA":[
-         8.3,
-         7.4
+         830,
+         741
       ]
-   },
+},
 </code></pre>
+
+The 'irradiance' JSON object encompasses two key attributes:
+
+- **GHI (Global Horizontal Irradiance)**: This attribute represents the Global Horizontal Irradiance and is denoted by 'GHI.' It's expressed as a decimal integer in watts per square meter, for example, "455W/m²."
+
+- **POA (Plane of Array)**: The 'POA' attribute stands for 'Plane of Array' irradiance and is represented as an array. It can contain one or up to 10 elements, depending on the PV plant size. Each element in the 'POA' array is a decimal integer in watts per square meter, similar to 'GHI.' For instance, "830W/m²."
+
+The 'irradiance' object allows you to gather information about both Global Horizontal Irradiance (GHI) and Plane of Array (POA) irradiance, crucial for photovoltaic systems' performance assessment.
 
 ---
 
 ### soilingRatio 
-<pre><code>
-   "soilingRatio":[
+<pre><code>"soilingRatio":[
       0.12,
       0.15
    ],
@@ -224,15 +225,13 @@ The 'wind' JSON object comprises two key attributes:
 ---
 
 ### rainFall
-<pre><code>
-   "rainFall":11.5,
+<pre><code>"rainFall":11.5,
 </code></pre>
 
 ---
 
 ### pushPullForce
-<pre><code>
-   "pushPullForce":[
+<pre><code>"pushPullForce":[
       0.1,
       -0.2,
       0.3
