@@ -133,14 +133,30 @@ This JSON object structure allows you to store detailed information about PV inv
       "SOH":100,
       "voltage":24.1,
       "current":5.4,
-      "temperature":[
-         25.4,
-         33.6,
-         55.3
-      ],
+      "temperature":{
+         "min":25.4,
+         "mean":33.6,
+         "max":55.3
+      },
       "state":0
    },
 </code></pre>
+
+The 'battery' JSON object provides information about battery storage:
+
+- **SOC (State of Charge)**: SOC represents the battery's state of charge in percent (%), and it is presented as a decimal integer, e.g., `90%`.
+
+- **SOH (State of Health)**: SOH represents the battery's state of health in percent (%), and it is represented as a decimal integer, e.g., `100%`.
+
+- **Voltage**: The 'voltage' attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
+
+- **Current**: The 'current' attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
+
+- **Temperature**: The 'temperature' attribute provides details on the battery's temperature. It includes sub-objects for 'min,' 'mean,' and 'max,' which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the 'mean' value should be considered, with others as null.
+
+- **State**: The 'state' attribute deciphers the state of the battery using a 16-bit code.
+
+This JSON object structure allows you to gather comprehensive information about battery storage, including its state of charge, state of health, voltage, current, temperature data, and operational state.
 
 ---
 
@@ -150,6 +166,13 @@ This JSON object structure allows you to store detailed information about PV inv
       50.5,
       51.2
    ],
+</code></pre>
+
+---
+
+### ambientTemperature
+<pre><code>
+   "ambientTemperature":25.3,
 </code></pre>
 
 ---
