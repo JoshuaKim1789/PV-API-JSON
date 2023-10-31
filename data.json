@@ -78,8 +78,8 @@
       ]
    },
    "soilingRatio":[
-      0.12,
-      0.15
+      12,
+      15
    ],
    "rainFall":11.5,
    "pushPullForce":[
