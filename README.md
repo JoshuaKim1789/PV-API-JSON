@@ -1,5 +1,5 @@
-# PV-API-JSON 
-## _PV monitoring system API_, _GA Co., Ltd._
+# _GA Co., Ltd. PV Monitoring System API Documentation_
+
 
 ### Table of Contents
 
@@ -97,7 +97,7 @@ This JSON object structure allows you to store information about PV strings, inc
          "power":660,
          "powerFactor":99,
          "frequency":60.0,
-         "cumOutput":2200,
+         "cumulativeOutput":2200,
          "state":0
       }
    ],
@@ -117,7 +117,7 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 - **frequency**: The `frequency` attribute denotes the frequency of the PV inverter in hertz (Hz) and is a decimal number with one fraction, e.g., `59.9Hz`.
 
-- **cumOutput**: The `cumOutput` attribute describes the accumulated power over time of the PV inverter in kilowatt-hours (kWh). It is represented as a decimal integer, e.g., `2200kWh`.
+- **cumulativeOutput**: The `cumulativeOutput` attribute describes the accumulated power over time of the PV inverter in kilowatt-hours (kWh). It is represented as a decimal integer, e.g., `2200kWh`.
 
 - **state**: The `state` attribute deciphers the state of the PV inverter using a 16-bit code.
 
@@ -146,13 +146,13 @@ The `battery` JSON object provides information about battery storage:
 
 - **SOH (State of Health)**: `SOH` represents the battery's state of health in percent (%), and it is represented as a decimal integer, e.g., `100%`.
 
-- **Voltage**: The `voltage` attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
+- **voltage**: The `voltage` attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
 
-- **Current**: The `current` attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
+- **current**: The `current` attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
 
-- **Temperature**: The `temperature` attribute provides details on the battery's temperature. It includes sub-objects for `min`, `mean`, and `max`, which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the `mean` value should be considered, with others as null.
+- **temperature**: The `temperature` attribute provides details on the battery's temperature. It includes sub-objects for `min`, `mean`, and `max`, which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the `mean` value should be considered, with others as null.
 
-- **State**: The 'state' attribute deciphers the state of the battery using a 16-bit code.
+- **state**: The `state` attribute deciphers the state of the battery using a 16-bit code.
 
 This JSON object structure allows you to gather comprehensive information about battery storage, including its state of charge, state of health, voltage, current, temperature data, and operational state.
 
@@ -249,6 +249,6 @@ This object is valuable for monitoring and identifying problems in the PV struct
 
 ---
 
-Last Updated: October 31, 2023
+Last Updated: November 1, 2023
 
 --
