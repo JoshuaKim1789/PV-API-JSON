@@ -3,30 +3,32 @@
 
 ### Table of Contents
 
-- [siteId](#siteId)
+- [siteId](#siteid)
 - [timestamp](#timestamp)
 - [string](#string)
 - [inverter](#inverter)
 - [battery](#battery)
-- [PVtemperature](#PVtemperature)
-- [ambientTemperature](#ambientTemperature)
+- [PVtemperature](#pvtemperature)
+- [ambientTemperature](#ambienttemperature)
 - [wind](#wind)
 - [irradiance](#irradiance)
-- [soilingRatio](#soilingRatio)
-- [pushPullForce](#pushPullForce)
+- [soilingRatio](#soilingratio)
+- [pushPullForce](#pushpullforce)
 
 ---
 
 ### siteId
+
 ```
 "siteId":"0001",
 ```
 
-The variable `siteId` serves as the unique identifier for a PV (photovoltaic) plant. It is of the string data type, and its value can be any string, such as "anywhere." However, for the sake of clarity and consistency, we recommend using a numeric string in the format of `0001` to `9999` to represent site identifiers.
+The variable `siteId` serves as the unique identifier for a PV (photovoltaic) plant. It is of the string data type, and its value can be any string, such as "anywhere." However, for the sake of clarity and consistency, we recommend using a numeric string in the format of `"0001"` to `"9999"` to represent site identifiers.
 
 ---
 
 ### timestamp
+
 ``` 
 "timestamp":"2023-10-23T15:30:00",
 ```
@@ -36,6 +38,7 @@ The `timestamp` value is provided in the ISO 8601 format, which is widely recogn
 ---
 
 ### string
+
 <pre><code>"string": [
       {
          "stringId": 1,
@@ -67,6 +70,7 @@ This JSON object structure allows you to store information about PV strings, inc
 ---
 
 ### inverter
+
 <pre><code>"inverter":[
       {
          "inverterId":1,
@@ -126,6 +130,7 @@ This JSON object structure allows you to store detailed information about PV inv
 ---
 
 ### battery
+
 <pre><code>"battery":{
       "SOC":90,
       "SOH":100,
@@ -159,6 +164,7 @@ This JSON object structure allows you to gather comprehensive information about 
 ---
 
 ### PVtemperature
+
 <pre><code>"PVtemperature":[
       50.5,
       51.2
@@ -172,6 +178,7 @@ If a single PV temperature sensor is in use, the array contains one element repr
 ---
 
 ### ambientTemperature
+
 <pre><code>"ambientTemperature":25.3,
 </code></pre>
 
@@ -180,6 +187,7 @@ The `ambientTemperature` JSON object represents the ambient temperature in degre
 ---
 
 ### wind
+
 <pre><code>"wind":{
       "speed":4.5,
       "direction":180
@@ -195,6 +203,7 @@ The `wind` JSON object comprises two key attributes:
 ---
 
 ### irradiance
+
 <pre><code>"irradiance":{
       "GHI":455,
       "POA":[
@@ -215,6 +224,7 @@ The 'irradiance' object allows you to gather information about both Global Horiz
 ---
 
 ### soilingRatio 
+
 <pre><code>"soilingRatio":[
       12,
       15
@@ -230,6 +240,7 @@ This object enables monitoring and understanding the soiling conditions affectin
 ---
 
 ### pushPullForce
+
 <pre><code>"pushPullForce":[
       0.1,
       -0.2,
