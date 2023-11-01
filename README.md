@@ -134,7 +134,7 @@ This JSON object structure allows you to store detailed information about PV inv
 <pre><code>"battery":{
       "SOC":90,
       "SOH":100,
-      "voltage":24.1,
+      "voltage":48.3,
       "current":5.4,
       "temperature":{
          "min":25.4,
@@ -215,9 +215,9 @@ The `wind` JSON object comprises two key attributes:
 
 The `irradiance` JSON object encompasses two key attributes:
 
-- **GHI (Global Horizontal Irradiance)**: This attribute represents the Global Horizontal Irradiance and is denoted by `GHI`. It's expressed as a decimal integer in watts per square meter, for example, `455W/m²`.
+- **GHI (Global Horizontal Irradiance)**: This attribute represents the Global Horizontal Irradiance and is denoted by `GHI`. It's expressed as a decimal integer in watts per square meter (W/m²), for example, `455W/m²`.
 
-- **POA (Plane of Array)**: The `POA` attribute stands for 'Plane of Array' irradiance and is represented as an array. It can contain one or up to 10 elements, depending on the PV plant size. Each element in the `POA` array is a decimal integer in watts per square meter, similar to `GHI`. For instance, `830W/m²`.
+- **POA (Plane of Array)**: The `POA` attribute stands for 'Plane of Array' irradiance and is represented as an array. It can contain one or up to 10 elements, depending on the PV plant size. Each element in the `POA` array is a decimal integer in watts per square meter (W/m²), similar to `GHI`. For instance, `830W/m²`.
 
 The 'irradiance' object allows you to gather information about both Global Horizontal Irradiance (`GHI`) and Plane of Array (`POA`) irradiance, crucial for photovoltaic systems' performance assessment.
 
@@ -233,7 +233,7 @@ The 'irradiance' object allows you to gather information about both Global Horiz
 
 The `soilingRatio` JSON object provides insights into the soiling ratio of PV panels. It can encompass zero to ten values, depending on the number of installed soiling sensors and the size of the PV plant.
 
-Each element within the `soilingRatio` array is represented as a decimal integer in percentage, such as `12%`. A reading of `0%` indicates the absence of soiling or perfect cleanliness, while `100%` represents complete soiling or a significant reduction in energy output.
+Each element within the `soilingRatio` array is represented as a decimal integer in percentage (%), such as `12%`. A reading of `0%` indicates the absence of soiling or perfect cleanliness, while `100%` represents complete soiling or a significant reduction in energy output.
 
 This object enables monitoring and understanding the soiling conditions affecting the performance of PV panels within the plant.
 
@@ -248,7 +248,7 @@ This object enables monitoring and understanding the soiling conditions affectin
    ]
 </code></pre>
 
-The `pushPullForce` JSON object is used to measure forces at PV structure joint points, providing insights into the structure's health. Each value in the array is represented as a decimal number with one fraction in kilograms, for example, `0.3kg`. 
+The `pushPullForce` JSON object is used to measure forces at PV structure joint points, providing insights into the structure's health. Each value in the array is represented as a decimal number with one fraction in kilograms (kg), for example, `0.3kg`. 
 
 In this context:
 - A positive value indicates a push force.
