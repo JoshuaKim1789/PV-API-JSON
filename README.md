@@ -79,7 +79,7 @@ This JSON object structure allows you to store information about PV strings, inc
          "power":660,
          "powerFactor":100,
          "frequency":59.9,
-         "cumOutput":2000,
+         "cumulativeOutput":2000,
          "state":0
       },
       {
