@@ -5,10 +5,10 @@
 
 - [siteId](#siteid)
 - [timestamp](#timestamp)
-- [string](#string)
+- [pvString](#pvstring)
 - [inverter](#inverter)
 - [battery](#battery)
-- [PVtemperature](#pvtemperature)
+- [pvTemperature](#pvtemperature)
 - [ambientTemperature](#ambienttemperature)
 - [wind](#wind)
 - [irradiance](#irradiance)
@@ -37,9 +37,9 @@ The `timestamp` value is provided in the ISO 8601 format, which is widely recogn
 
 ---
 
-### string
+### pvString
 
-<pre><code>"string": [
+<pre><code>"pvString": [
       {
          "stringId": 1,
          "voltage": 20.1,
@@ -55,7 +55,7 @@ The `timestamp` value is provided in the ISO 8601 format, which is widely recogn
 ]
 </code></pre>
 
-The JSON object `string` is an array that can contain one to 30 objects. Each object within the 'string' array possesses the following attributes:
+The JSON object `pvString` is an array that can contain one to 30 objects. Each object within the 'pvString' array possesses the following attributes:
 
 - **stringId**: This attribute serves as a unique identifier for a PV string and is represented as a decimal integer ranging from 1 to 30. For example, `12`. It's important to note that `stringId` values are sequential, starting from 1.
 
@@ -163,15 +163,15 @@ This JSON object structure allows you to gather comprehensive information about 
 
 ---
 
-### PVtemperature
+### pvTemperature
 
-<pre><code>"PVtemperature":[
+<pre><code>"pvTemperature":[
       50.5,
       51.2
    ],
 </code></pre>
 
-The `PVtemperature` JSON object is an array that can contain one to 30 elements. Each element in the array represents the temperature of a PV (photovoltaic) module in degrees Celsius (°C) and is expressed as a decimal number with one fraction. For example, `50.5°C`.
+The `pvTemperature` JSON object is an array that can contain one to 30 elements. Each element in the array represents the temperature of a PV (photovoltaic) module in degrees Celsius (°C) and is expressed as a decimal number with one fraction. For example, `50.5°C`.
 
 If a single PV temperature sensor is in use, the array contains one element representing the current temperature reading.
 
@@ -260,6 +260,6 @@ This object is valuable for monitoring and identifying problems in the PV struct
 
 ---
 
-Last Updated: November 1, 2023
+Last Updated: November 11, 2023
 
 --

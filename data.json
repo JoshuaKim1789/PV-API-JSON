@@ -1,7 +1,7 @@
 {
    "siteId":"0001",
    "timestamp":"2023-10-23T15:30:00",
-   "string":[
+   "pvString":[
       {
          "stringId":1,
          "voltage":20.1,
@@ -61,7 +61,7 @@
       },
       "state":0
    },
-   "PVtemperature":[
+   "pvTemperature":[
       50.5,
       51.2
    ],
