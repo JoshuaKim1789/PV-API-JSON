@@ -154,6 +154,8 @@ The `battery` JSON object provides information about battery storage:
 - **voltage**: The `voltage` attribute indicates the voltage of the battery in volts (V). It's a decimal number with one fraction, such as `48.3V`.
 
 - **current**: The `current` attribute signifies the current of the battery in amperes (A). It's presented as a decimal number with one fraction, for instance, `5.4A`.
+    -  Positive Battery Current **(+)**: Discharge, indicating energy is being supplied from the battery to power loads.
+    - Negative Battery Current **(-)**: Charge, indicating energy is being supplied to the battery for charging.
 
 - **temperature**: The `temperature` attribute provides details on the battery's temperature. It includes sub-objects for `min`, `mean`, and `max`, which represent the minimum, mean, and maximum temperatures recorded by temperature sensors. Temperatures are measured in degrees Celsius (°C) as decimal numbers with one fraction, e.g., `33.6°C`. If a single temperature sensor is in use, the `mean` value should be considered, with others as null.
 
@@ -260,6 +262,6 @@ This object is valuable for monitoring and identifying problems in the PV struct
 
 ---
 
-Last Updated: November 11, 2023
+Last Updated: November 15, 2023
 
 --
