@@ -59,11 +59,11 @@ public class Temperature
 public class Wind
 {
     public double speed { get; set; }
-    public int direction { get; set; }
+    public int? direction { get; set; }
 }
 
 public class Irradiance
 {
-    public int GHI { get; set; }
+    public int? GHI { get; set; }
     public List<int> POA { get; set; }
 }
