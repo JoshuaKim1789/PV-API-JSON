@@ -54,6 +54,8 @@ class Program
 
                 try
                 {
+                    // Monitor Request body
+                    Console.WriteLine($"TaskA - Request Body: {jsonString}");
                     // Send HTTP POST request
                     var response = await httpClient.PostAsync(serverUrl, new StringContent(jsonString), cancellationToken);
 
