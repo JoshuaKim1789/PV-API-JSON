@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.IO;
 
 class Program
 {
@@ -41,6 +42,8 @@ class Program
 
     static async Task TaskPostToServer(string serverUrl, int interval, CancellationToken cancellationToken)
     {
+        // Use StreamWriter for writing to the log file
+        using (StreamWriter errorLogWriter = new StreamWriter("error_trace.log", true))
         using (var httpClient = new HttpClient())
         {
             while (!cancellationToken.IsCancellationRequested)
@@ -48,17 +51,39 @@ class Program
                 PvDataUpdate.UpdatePvDataJson(SharedData.pvSiteUse);
                 SharedData.jsonStringRaw = Newtonsoft.Json.JsonConvert.SerializeObject(SharedData.pvSiteUse);
                 string jsonString = SharedData.jsonStringRaw;
-                // Monitor Request body
-                Console.WriteLine($"TaskA - Request Body: {jsonString}");     
-                // Send HTTP POST request
-                var response = await httpClient.PostAsync(serverUrl, new StringContent(jsonString), cancellationToken);
 
-                // Display response code and body
-                Console.WriteLine($"TaskA - HTTP Status Code: {response.StatusCode} ({(int)response.StatusCode})");
-                Console.WriteLine($"TaskA - Response Body: {await response.Content.ReadAsStringAsync()}");
+                try
+                {
+                    // Send HTTP POST request
+                    var response = await httpClient.PostAsync(serverUrl, new StringContent(jsonString), cancellationToken);
 
-                // Wait for the specified interval
-                await Task.Delay(TimeSpan.FromSeconds(interval), cancellationToken);
+                    // Display response code and body
+                    Console.WriteLine($"TaskA - HTTP Status Code: {response.StatusCode} ({(int)response.StatusCode})");
+                    Console.WriteLine($"TaskA - Response Body: {await response.Content.ReadAsStringAsync()}");
+
+                    // Check if the response status code is not 200
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                    {
+                        // Log error information to the file
+                        string errorLogMessage = $"{SharedData.pvSiteUse.timestamp} TaskA - HTTP Status Code: {response.StatusCode} ({(int)response.StatusCode})" +
+                                                 $"Error Response Body: {await response.Content.ReadAsStringAsync()}\n";
+                        errorLogWriter.WriteLine(errorLogMessage);
+                        errorLogWriter.Flush(); // Ensure the content is written immediately
+                    }
+
+                    // Wait for the specified interval
+                    await Task.Delay(TimeSpan.FromSeconds(interval), cancellationToken);
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions (e.g., network issues) and log to the file
+                    string errorLogMessage = $"{SharedData.pvSiteUse.timestamp} TaskA - Exception: {ex.Message}\n";
+                    errorLogWriter.WriteLine(errorLogMessage);
+                    errorLogWriter.Flush(); // Ensure the content is written immediately
+
+                    // Wait for the specified interval before retrying
+                    await Task.Delay(TimeSpan.FromSeconds(interval), cancellationToken);
+                }
             }
         }
     }
