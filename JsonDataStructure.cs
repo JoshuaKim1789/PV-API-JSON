@@ -33,8 +33,8 @@ public class Inverter
     public List<double> voltage { get; set; }
     public List<double> current { get; set; }
     public int power { get; set; }
-    public int powerFactor { get; set; }
-    public double frequency { get; set; }
+    public int? powerFactor { get; set; }
+    public double? frequency { get; set; }
     public ulong cumulativeOutput { get; set; }
     public ushort state { get; set; }
 }
@@ -42,7 +42,7 @@ public class Inverter
 public class Battery
 {
     public int SOC { get; set; }
-    public int SOH { get; set; }
+    public int? SOH { get; set; }
     public double voltage { get; set; }
     public double current { get; set; }
     public Temperature temperature { get; set; }
@@ -51,9 +51,9 @@ public class Battery
 
 public class Temperature
 {
-    public double min { get; set; }
-    public double mean { get; set; }
-    public double max { get; set; }
+    public double? min { get; set; }
+    public double? mean { get; set; }
+    public double? max { get; set; }
 }
 
 public class Wind
