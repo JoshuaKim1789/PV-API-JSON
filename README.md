@@ -1,5 +1,6 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
+Last Updated: November 15, 2023
 
 ### Table of Contents
 
@@ -259,9 +260,5 @@ In this context:
 The `pushPullForce` array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is present, the array remains null. If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
 
 This object is valuable for monitoring and identifying problems in the PV structure based on force measurements.
-
----
-
-Last Updated: November 15, 2023
 
 --
