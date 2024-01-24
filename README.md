@@ -1,6 +1,6 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
-<p style="text-align: right;">Last Updated: November 15, 2023</p>
+<p style="text-align: right;">Last Updated: January 24, 2024</p>
 
 ### Table of Contents
 
@@ -84,7 +84,7 @@ This JSON object structure allows you to store information about PV strings, inc
          "power":660,
          "powerFactor":100,
          "frequency":59.9,
-         "cumulativeOutput":2000,
+         "cumulativeOutput":200.1,
          "state":0
       },
       {
@@ -102,7 +102,7 @@ This JSON object structure allows you to store information about PV strings, inc
          "power":660,
          "powerFactor":99,
          "frequency":60.0,
-         "cumulativeOutput":2200,
+         "cumulativeOutput":220.3,
          "state":0
       }
    ],
@@ -122,7 +122,7 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 - **frequency**: The `frequency` attribute denotes the frequency of the PV inverter in hertz (Hz) and is a decimal number with one fraction, e.g., `59.9Hz`.
 
-- **cumulativeOutput**: The `cumulativeOutput` attribute describes the accumulated power over time of the PV inverter in kilowatt-hours (kWh). It is represented as a decimal integer, e.g., `2200kWh`.
+- **cumulativeOutput**: The `cumulativeOutput` attribute describes the accumulated power over time of the PV inverter in kilowatt-hours (kWh). It is represented as a decimal number with one fraction, e.g., `220.1kWh`.
 
 - **state**: The `state` attribute deciphers the state of the PV inverter using a 16-bit code.
 
