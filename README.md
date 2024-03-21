@@ -128,9 +128,11 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 <font size = "2">
 
-| Bit 15 | Bit 14 | Bit 13 | Bit 12 | Bit 11 | Bit 10 | Bit 09 | Bit 08 |
-|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| Reserved | Reserved | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
+| Bit 15   | Bit 14   | Bit 13   | Bit 12   | Bit 11    | Bit 10              | Bit 09             | Bit 08           |
+|:------:  |:------:  |:------:  |:------:  |:------:   |:------:             |:------:            |:------:          |
+| Reserved | Reserved | Reserved | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
+|          |          |          | 0=Normal | 0=Normal  | 0=Normal            | 0=Normal           | 0=Normal         |
+|          |          |          | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
 
 | Bit 07            | Bit 06           | Bit 05           | Bit 04  | Bit 03         | Bit 02          | Bit 01         | Bit 00       |
 |:------:           |:------:          |:------:          |:------: |:------:        |:------:         |:------:        |:------:      |
