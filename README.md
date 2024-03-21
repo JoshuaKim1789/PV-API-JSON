@@ -130,7 +130,6 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 | Reserved | Reserved | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
 
-
 | Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 | Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
