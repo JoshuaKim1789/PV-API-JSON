@@ -126,10 +126,10 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 - **state**: The `state` attribute deciphers the state of the PV inverter using a 16-bit code.
 
-| Type | USR           | Modbus-Poll                             |
-|:----:|:------------  |:----------------------                  |
-| U32  | uint32(ABCD)  | 32-bit Unsigned -> Big-endian           |
-| SF32 | float32(CDAB) | 32-bit Float -> Little-endian byte swap |
+| Bit 15 | Bit 14 | Bit 13 | Bit 12 | Bit 11 | Bit 10 | Bit 09 | Bit 08 |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
+| Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
+|:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 
 
 
