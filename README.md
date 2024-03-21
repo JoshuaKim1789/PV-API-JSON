@@ -132,8 +132,8 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 | Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
-
+| Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Inverter Run |
+| Bit 07 | Bit 06 | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | 0=RUN, 1=STOP |
 
 This JSON object structure allows you to store detailed information about PV inverters, including their unique identifiers, voltage (in volts), current (in amperes), calculated power (in watts), power factor (in %), frequency (in Hz), cumulative output (in kWh), and state.
 
