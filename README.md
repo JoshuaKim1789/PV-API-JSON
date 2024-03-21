@@ -130,11 +130,11 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 |:------:|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 | Reserved | Reserved | Bit 05 | Bit 04 | Bit 03 | Bit 02 | Bit 01 | Bit 00 |
 
-| Bit 07            | Bit 06           | Bit 05            | Bit 04  | Bit 03         | Bit 02          | Bit 01         | Bit 00       |
-|:------:           |:------:          |:------:           |:------: |:------:        |:------:         |:------:        |:------:      |
-| Grid Undervoltage | Grid Overvoltage | Overtemperature   | IGBT    | PV Overcurrent | PV Undervoltage | PV Overvoltage | Inverter Run |
-| 0=Normal          | 0=Normal         | 0=Normal          | 0=Normal| 0=Normal       | 0=Normal        | 0=Normal       | 0=Run        |
-| 1=Undervoltage    | 1=Overvoltage    | 1=Overtemperature | 1=Fault | 1=Overcurrent  | 1=Undervoltage  | 1=Overvoltage  | 1=Stop       |
+| Bit 07            | Bit 06           | Bit 05           | Bit 04  | Bit 03         | Bit 02          | Bit 01         | Bit 00       |
+|:------:           |:------:          |:------:          |:------: |:------:        |:------:         |:------:        |:------:      |
+| Grid Undervoltage | Grid Overvoltage | Over temperature | IGBT    | PV Overcurrent | PV Undervoltage | PV Overvoltage | Inverter Run |
+| 0=Normal          | 0=Normal         | 0=Normal         | 0=Normal| 0=Normal       | 0=Normal        | 0=Normal       | 0=Run        |
+| 1=UV              | 1=OV             | 1=OT             | 1=Fault | 1=OC           | 1=UV            | 1=OV           | 1=Stop       |
 
 This JSON object structure allows you to store detailed information about PV inverters, including their unique identifiers, voltage (in volts), current (in amperes), calculated power (in watts), power factor (in %), frequency (in Hz), cumulative output (in kWh), and state.
 
