@@ -1,6 +1,6 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
-<p style="text-align: right;">Last Updated: January 24, 2024</p>
+<p style="text-align: right;">Last Updated: March 21, 2024</p>
 
 ### Table of Contents
 
