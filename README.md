@@ -1,6 +1,6 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
-<p style="text-align: right;">Last Updated: March 27, 2024</p>
+<p style="text-align: right;">Last Updated: Aug. 5, 2024</p>
 
 ### Table of Contents
 
@@ -129,11 +129,11 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 - **state**: The `state` attribute deciphers the state of the PV inverter using a 16-bit code.
 
-| Bit 15       | Bit 14     | Bit 13   | Bit 12   | Bit 11    | Bit 10              | Bit 09             | Bit 08           |
-|:------:      |:------:    |:------:  |:------:  |:------:   |:------:             |:------:            |:------:          |
-| Grid Connect | Generating | Reserved | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
-| 0=On         | 0=Run      |          | 0=Normal | 0=Normal  | 0=Normal            | 0=Normal           | 0=Normal         |
-| 1=Off        | 1=Stop     |          | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
+| Bit 15       | Bit 14     | Bit 13      | Bit 12   | Bit 11    | Bit 10              | Bit 09             | Bit 08           |
+|:------:      |:------:    |:------:     |:------:  |:------:   |:------:             |:------:            |:------:          |
+| Grid Connect | Generating | Performance | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
+| 0=On         | 0=Run      | 0=Normal    | 0=Normal | 0=Normal  | 0=Normal            | 0=Normal           | 0=Normal         |
+| 1=Off        | 1=Stop     | 1=Under     | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
 
 | Bit 07            | Bit 06           | Bit 05           | Bit 04  | Bit 03         | Bit 02          | Bit 01         | Bit 00   |
 |:------:           |:------:          |:------:          |:------: |:------:        |:------:         |:------:        |:------:  |
