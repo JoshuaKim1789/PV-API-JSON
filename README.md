@@ -133,7 +133,7 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 |:------:      |:------:    |:------:     |:------:  |:------:   |:------:             |:------:            |:------:          |
 | Grid Connect | Generating | Performance | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
 | 0=On         | 0=Run      | 0=Normal    | 0=Normal | 0=Normal  | 0=Normal            | 0=Normal           | 0=Normal         |
-| 1=Off        | 1=Stop     | 1=Under     | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
+| 1=Off        | 1=Stop     | 1=Low       | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
 
 | Bit 07            | Bit 06           | Bit 05           | Bit 04  | Bit 03         | Bit 02          | Bit 01         | Bit 00   |
 |:------:           |:------:          |:------:          |:------: |:------:        |:------:         |:------:        |:------:  |
