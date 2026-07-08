@@ -1,11 +1,12 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
-<p style="text-align: right;">Last Updated: Aug. 5, 2024</p>
+<p style="text-align: right;">Last Updated: Jul. 8, 2026</p>
 
 ### Table of Contents
 
 - [siteId](#siteid)
 - [timestamp](#timestamp)
+- [Data availability (`null`)](#data-availability-null)
 - [pvString](#pvstring)
 - [inverter](#inverter)
 - [battery](#battery)
@@ -35,6 +36,31 @@ The variable `siteId` serves as the unique identifier for a PV (photovoltaic) pl
 ```
 
 The `timestamp` value is provided in the ISO 8601 format, which is widely recognized and standardized for date and time representation. The format `YYYY-MM-DDTHH:MM:SS` provides a clear and unambiguous way to represent date and time information. In this example, the timestamp represents October 23, 2023, at 15:30:00 (3:30 PM).
+
+---
+
+### Data availability (`null`)
+
+<pre><code>"ambientTemperature": null,
+"irradiance": { "GHI": null, "POA": [830, null] },
+"pvTemperature": [50.5, null]
+</code></pre>
+
+Every measured value follows a **three-state** rule, so that a sensor fault is never mistaken for a real reading:
+
+| Value on the wire | Meaning |
+|---|---|
+| a number (**including `0`**) | a valid reading — `0` is a real value (e.g., irradiance is `0 W/m²` at night, temperature can be `0 °C`) |
+| **`null`** | the sensor is present/expected but its value **could not be read** at this time (e.g., the sensor's RTU link is down) |
+| **field omitted** | the sensor is **not installed** at this site |
+
+Rules:
+
+- For a sensor that cannot be read, send **`null`** — **never `0`**, and never a placeholder number.
+- For arrays, use `null` **per element** and keep the array length so element positions stay aligned. For example, `"POA":[830, null]` means the second POA sensor is unavailable while the first still reads `830 W/m²`.
+- Do **not** use numeric sentinels (`-1`, `-9999`), string placeholders (`"N/A"`), or `NaN` — they are indistinguishable from real data, or are invalid JSON.
+
+On the receiving side, `null` is stored as SQL `NULL` (not `0`), excluded from period averages, and flagged for inspection instead of being shown as a false `0`. This convention applies to every sensor reading described below.
 
 ---
 

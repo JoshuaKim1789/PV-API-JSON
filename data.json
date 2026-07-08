@@ -65,18 +65,18 @@
    },
    "pvTemperature":[
       50.5,
-      51.2
+      null
    ],
-   "ambientTemperature":25.3,
+   "ambientTemperature":null,
    "wind":{
       "speed":4.5,
       "direction":180
    },
    "irradiance":{
-      "GHI":455,
+      "GHI":null,
       "POA":[
          830,
-         741
+         null
       ]
    },
    "soilingRatio":[
