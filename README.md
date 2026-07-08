@@ -60,7 +60,9 @@ Rules:
 - For arrays, use `null` **per element** and keep the array length so element positions stay aligned. For example, `"POA":[830, null]` means the second POA sensor is unavailable while the first still reads `830 W/m²`.
 - Do **not** use numeric sentinels (`-1`, `-9999`), string placeholders (`"N/A"`), or `NaN` — they are indistinguishable from real data, or are invalid JSON.
 
-On the receiving side, `null` is stored as SQL `NULL` (not `0`), excluded from period averages, and flagged for inspection instead of being shown as a false `0`. This convention applies to every sensor reading described below.
+On the receiving side, `null` is stored as SQL `NULL` (not `0`), excluded from period averages, and flagged for inspection instead of being shown as a false `0`.
+
+This three-state rule applies to the **environmental sensor readings** — `pvTemperature`, `ambientTemperature`, `wind`, `irradiance`, `soilingRatio`, `pushPullForce`, and the `battery` sub-fields. **Inverter** telemetry availability is handled at the payload level instead: when the inverter's RTU is unreachable, the client sends a minimal envelope — `{ siteId, timestamp, inverter:[{ inverterId, dailyEnergy, totalEnergy }] }`.
 
 ---
 
@@ -110,7 +112,8 @@ This JSON object structure allows you to store information about PV strings, inc
          "power":660,
          "powerFactor":100,
          "frequency":59.9,
-         "cumulativeOutput":200.1,
+         "dailyEnergy":12.4,
+         "totalEnergy":200.1,
          "state":0
       },
       {
@@ -157,7 +160,7 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 
 | Bit 15       | Bit 14     | Bit 13      | Bit 12   | Bit 11    | Bit 10              | Bit 09             | Bit 08           |
 |:------:      |:------:    |:------:     |:------:  |:------:   |:------:             |:------:            |:------:          |
-| Grid Connect | Generating | Performance | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
+| Grid Connect | Generating | Performance (server-derived) | Earth    | Islanding | Grid Underfrequency | Grid Overfrequency | Grid Overcurrent |
 | 0=On         | 0=Run      | 0=Normal    | 0=Normal | 0=Normal  | 0=Normal            | 0=Normal           | 0=Normal         |
 | 1=Off        | 1=Stop     | 1=Low       | 1=Fault  | 1=Fault   | 1=UF                | 1=OF               | 1=OC             | 
 
@@ -167,8 +170,9 @@ The JSON object `inverter` is an array that can contain one to 30 objects. Each 
 | 0=Normal          | 0=Normal         | 0=Normal         | 0=Normal| 0=Normal       | 0=Normal        | 0=Normal       | 0=On     |
 | 1=UV              | 1=OV             | 1=OT             | 1=Fault | 1=OC           | 1=UV            | 1=OV           | 1=Off    |
 
+> **Note:** Bit 13 (Performance) is derived on the server; the client always transmits 0.
 
-This JSON object structure allows you to store detailed information about PV inverters, including their unique identifiers, voltage (in volts), current (in amperes), calculated power (in watts), power factor (in %), frequency (in Hz), cumulative output (in kWh), and state.
+This JSON object structure allows you to store detailed information about PV inverters, including their unique identifiers, voltage (in volts), current (in amperes), calculated power (in watts), power factor (in %), frequency (in Hz), daily and total energy (in kWh), and state.
 
 ---
 
@@ -299,8 +303,8 @@ In this context:
 - A positive value indicates a push force.
 - A negative value indicates a pull force.
 
-The `pushPullForce` array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is present, the array remains null. If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
+The `pushPullForce` array can contain up to 10 elements, depending on the number of sensors installed. If no force sensor is installed, the `pushPullForce` field is omitted. If a sensor is installed but a value cannot be read, that element is `null` (keeping the array length). If any element in the array exceeds a certain threshold, it indicates a structural issue that requires attention.
 
 This object is valuable for monitoring and identifying problems in the PV structure based on force measurements.
 
---
+---
