@@ -18,6 +18,7 @@
    "inverter":[
       {
          "inverterId":1,
+         "capacity":3.7,
          "voltage":[
             220.0
          ],
@@ -33,6 +34,7 @@
       },
       {
          "inverterId":2,
+         "capacity":100,
          "voltage":[
             220.0,
             220.1,

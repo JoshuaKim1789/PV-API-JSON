@@ -1,6 +1,6 @@
 # _GA Co., Ltd. PV Monitoring System API Documentation_
 
-<p style="text-align: right;">Last Updated: Jul. 8, 2026</p>
+<p style="text-align: right;">Last Updated: Jul. 23, 2026</p>
 
 ### Table of Contents
 
@@ -62,7 +62,7 @@ Rules:
 
 On the receiving side, `null` is stored as SQL `NULL` (not `0`), excluded from period averages, and flagged for inspection instead of being shown as a false `0`.
 
-This three-state rule applies to the **environmental sensor readings** — `pvTemperature`, `ambientTemperature`, `wind`, `irradiance`, `soilingRatio`, `pushPullForce`, and the `battery` sub-fields. **Inverter** telemetry availability is handled at the payload level instead: when the inverter's RTU is unreachable, the client sends a minimal envelope — `{ siteId, timestamp, inverter:[{ inverterId, dailyEnergy, totalEnergy }] }`.
+This three-state rule applies to the **environmental sensor readings** — `pvTemperature`, `ambientTemperature`, `wind`, `irradiance`, `soilingRatio`, `pushPullForce`, and the `battery` sub-fields. **Inverter** telemetry availability is handled at the payload level instead: when the inverter's RTU is unreachable, the client sends a minimal envelope — `{ siteId, timestamp, inverter:[{ inverterId, capacity, dailyEnergy, totalEnergy }] }`. (`inverterId` and `capacity` are static per-inverter metadata and are **always present**, even in this minimal case; `dailyEnergy`/`totalEnergy` are held at their last-known values.)
 
 ---
 
@@ -103,6 +103,7 @@ This JSON object structure allows you to store information about PV strings, inc
 <pre><code>"inverter":[
       {
          "inverterId":1,
+         "capacity":3.7,
          "voltage":[
             220.0
          ],
@@ -118,6 +119,7 @@ This JSON object structure allows you to store information about PV strings, inc
       },
       {
          "inverterId":2,
+         "capacity":100,
          "voltage":[
             220.0,
             220.1,
@@ -141,6 +143,8 @@ This JSON object structure allows you to store information about PV strings, inc
 The JSON object `inverter` is an array that can contain one to 30 objects. Each object within the `inverter` array possesses the following attributes:
 
 - **inverterId**: This attribute serves as a unique identifier for a PV inverter and is represented as a decimal integer ranging from 1 to 30, e.g., `12`. It's important to note that `inverterId` values are sequential, starting from 1.
+
+- **capacity**: The `capacity` attribute is the inverter's rated (nameplate) capacity in kilowatts (kW), expressed as a decimal number with up to one fractional digit, e.g., `3.7kW`. Unlike the live telemetry fields below, it is **static** per-inverter metadata provisioned per site — not a measurement. It is therefore **always present** (including when the inverter is unreadable or its RTU is down) and is **never `null`**. Whole-kilowatt ratings may be written without a fraction (e.g., `100`).
 
 - **voltage**: The `voltage` attribute represents the voltage(s) of the PV inverter in volts (V). In the array, it can comprise one or three elements for single-phase or three-phase systems, respectively. Each element is a decimal number with one fraction, such as `220.3V`.
 
